@@ -4,51 +4,59 @@ import { MenuItem } from '../types';
 const menuItems: MenuItem[] = [
   {
     id: '1',
-    name: 'Royal Couscous',
-    description: 'Steamed semolina served with tender lamb, chicken, merguez, and seasonal vegetables.',
-    price: '28 TND',
-    image: 'https://images.unsplash.com/photo-1604579278540-db36e39527e2?q=80&w=1000&auto=format&fit=crop',
+    name: 'Ojja Royale',
+    description: 'A spicy Tunisian stew simmering with merguez, seafood, and poached eggs.',
+    price: '32 TND',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000&auto=format&fit=crop',
     category: 'main'
   },
   {
     id: '2',
-    name: 'Grilled Daurade (Sea Bream)',
-    description: 'Fresh local sea bream grilled over charcoal, served with tastira and fries.',
-    price: '30 TND',
-    image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=1000&auto=format&fit=crop',
+    name: 'Gambas Grillées',
+    description: 'Large Mediterranean prawns grilled to perfection with garlic butter and herbs.',
+    price: '45 TND',
+    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop',
     category: 'main'
   },
   {
     id: '3',
-    name: 'Brik à l\'Oeuf',
-    description: 'Crispy pastry triangle filled with egg, tuna, parsley, and capers.',
-    price: '6 TND',
+    name: 'Brik a l\'Oeuf',
+    description: 'Crispy malsouka pastry filled with tuna, capers, parsley, and a runny egg.',
+    price: '7 TND',
     image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000&auto=format&fit=crop',
     category: 'starter'
   },
   {
     id: '4',
-    name: 'Tunisian Salad',
-    description: 'Finely chopped tomatoes, cucumbers, onions, and peppers with olive oil and tuna.',
-    price: '8 TND',
-    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1000&auto=format&fit=crop',
+    name: 'Salade de Crevettes',
+    description: 'Fresh salad topped with succulent shrimps, avocado, and citrus dressing.',
+    price: '22 TND',
+    image: 'https://images.unsplash.com/photo-1551248429-40975aa4de74?q=80&w=1000&auto=format&fit=crop',
     category: 'starter'
   },
   {
     id: '5',
-    name: 'Mint Tea with Pine Nuts',
-    description: 'Traditional hot sweet tea served with pine nuts.',
-    price: '4 TND',
-    image: 'https://images.unsplash.com/photo-1576092762791-2f9e902b988f?q=80&w=1000&auto=format&fit=crop',
-    category: 'drink'
+    name: 'Couscous Djerbien',
+    description: 'Traditional steamed semolina with fresh local fish and seasonal vegetables.',
+    price: '28 TND',
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1000&auto=format&fit=crop',
+    category: 'main'
   },
   {
     id: '6',
-    name: 'Ojja Merguez',
-    description: 'Spicy scrambled eggs with tomato sauce and spicy sausages.',
-    price: '18 TND',
-    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000&auto=format&fit=crop',
+    name: 'Filet de Boeuf',
+    description: 'Tender beef fillet served with creamy mushroom sauce and homemade fries.',
+    price: '42 TND',
+    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1000&auto=format&fit=crop',
     category: 'main'
+  },
+   {
+    id: '7',
+    name: 'Thé à la Menthe',
+    description: 'Sweet mint tea garnished with crunchy pine nuts.',
+    price: '5 TND',
+    image: 'https://images.unsplash.com/photo-1576092762791-2f9e902b988f?q=80&w=1000&auto=format&fit=crop',
+    category: 'drink'
   }
 ];
 
@@ -60,60 +68,59 @@ const Menu: React.FC = () => {
     : menuItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="menu" className="py-24 bg-white relative">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-tunisian-sand/20 rounded-bl-full -z-0"></div>
-
+    <section id="menu" className="py-32 bg-atik-ocean text-atik-cream relative">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-tunisian-blue font-bold uppercase tracking-widest text-sm mb-2 block">Delicious & Fresh</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">Our Specialties</h2>
+        <div className="text-center mb-20">
+          <span className="text-atik-gold font-ui font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Our Kitchen</span>
+          <h2 className="text-5xl md:text-7xl font-serif text-white mb-6">Culinary Masterpieces</h2>
+          <div className="w-24 h-1 bg-atik-terracotta mx-auto"></div>
         </div>
 
         {/* Filters */}
-        <div className="flex justify-center flex-wrap gap-4 mb-12">
+        <div className="flex justify-center flex-wrap gap-8 mb-16 font-ui">
           {['all', 'starter', 'main', 'drink'].map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat as any)}
-              className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
+              className={`text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 relative py-2 ${
                 activeCategory === cat 
-                  ? 'bg-tunisian-blue text-white shadow-lg transform scale-105' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'text-atik-gold' 
+                  : 'text-gray-400 hover:text-white'
               }`}
             >
-              {cat === 'all' ? 'All Dishes' : cat + 's'}
+              {cat === 'all' ? 'All' : cat + 's'}
+              <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-atik-gold transform origin-left transition-transform duration-300 ${activeCategory === cat ? 'scale-x-100' : 'scale-x-0'}`}></span>
             </button>
           ))}
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20 max-w-6xl mx-auto">
           {filteredItems.map((item) => (
-            <div key={item.id} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg shadow-md mb-4 h-64">
-                <img 
+            <div key={item.id} className="group flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div className="w-full md:w-48 h-48 overflow-hidden rounded-full border-4 border-atik-terracotta/20 flex-shrink-0 relative">
+                 <img 
                   src={item.image} 
                   alt={item.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
                 />
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg tracking-wider border-b-2 border-tunisian-gold pb-1">Taste It</span>
-                </div>
               </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-xl font-serif font-bold text-gray-900 mb-1 group-hover:text-tunisian-blue transition-colors">{item.name}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+              
+              <div className="text-center md:text-left flex-1">
+                <div className="flex flex-col md:flex-row justify-between items-baseline mb-3 border-b border-gray-700 pb-2 border-dashed">
+                  <h3 className="text-2xl font-serif font-bold text-atik-cream group-hover:text-atik-gold transition-colors">{item.name}</h3>
+                  <span className="text-xl font-bold text-atik-terracotta font-serif">{item.price}</span>
                 </div>
-                <span className="text-lg font-bold text-tunisian-gold whitespace-nowrap">{item.price}</span>
+                <p className="text-gray-400 text-lg font-light leading-relaxed">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
-           <p className="text-gray-500 italic text-sm">Menu items and prices are subject to seasonal changes.</p>
+        <div className="text-center mt-24">
+             <a href="https://glovoapp.com/tn/fr" target="_blank" rel="noreferrer" className="inline-block px-10 py-4 border border-atik-gold text-atik-gold font-ui font-bold uppercase tracking-widest text-xs hover:bg-atik-gold hover:text-atik-ocean transition-all">
+                Order Delivery
+             </a>
         </div>
       </div>
     </section>

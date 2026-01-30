@@ -3,36 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Le Babylone | Houmt Souk, Tunisia</title>
+    <title>Al Atik | Houmt Souk, Djerba</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              tunisian: {
-                red: '#E70013',
-                blue: '#0055A4',
-                gold: '#D4AF37',
-                sand: '#F5DEB3',
-                olive: '#808000',
-                white: '#F9F9F9',
+              atik: {
+                terracotta: '#9A3412', // Warm earthy tone
+                ocean: '#0F172A', // Deep refined blue
+                gold: '#D97706', // Accent gold
+                cream: '#F5F5F4', // Soft background
+                stone: '#78716C', // Secondary text
+                olive: '#365314', // Subtle green
               },
-              primary: '#1F2937',
-              secondary: '#4B5563',
             },
             fontFamily: {
-              serif: ['Playfair Display', 'serif'],
-              sans: ['Lato', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+              sans: ['Cormorant Garamond', 'serif'], // Using a serif for body text for elegance
+              modern: ['Montserrat', 'sans-serif'], // For UI elements
             },
             animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+              'slow-pan': 'panImage 30s linear infinite alternate',
               'float': 'float 3s ease-in-out infinite',
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              panImage: {
+                '0%': { transform: 'scale(1.1) translate(0%, 0%)' },
+                '100%': { transform: 'scale(1.2) translate(-2%, -2%)' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
@@ -43,28 +47,34 @@
         },
       };
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
       body {
-        font-family: 'Lato', sans-serif;
-        background-color: #F9F9F9;
+        font-family: 'Cormorant Garamond', serif;
+        background-color: #F5F5F4;
+        color: #0F172A;
         overflow-x: hidden;
       }
       h1, h2, h3, h4, h5, h6 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Cinzel', serif;
+      }
+      .font-ui {
+        font-family: 'Montserrat', sans-serif;
       }
       .scrollbar-hide::-webkit-scrollbar {
           display: none;
       }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
       }
-      .glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+      .glass-dark {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
   <script type="importmap">
